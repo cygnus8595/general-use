@@ -26,7 +26,7 @@ yum clean all
 /bin/rm -f /etc/udev/rules.d/70*
 
 # Remove unique IDs from ethernet interface files
-/bin/sed -i '/^(HWADDR|UUID)=/d' /etc/sysconfig/network-scripts/ifcfg-e*
+/bin/sed -i '/^HWADDR=|UUID=/d' /etc/sysconfig/network-scripts/ifcfg-e*
 
 # Clean /tmp directory
 /bin/rm –rf /tmp/* 
