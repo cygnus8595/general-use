@@ -8,11 +8,11 @@
 package-cleanup --oldkernels --count=1
 
 # Clear yum cache
-yum cleal all
+yum clean all
 
 # Rotate and remove logs
-/usr/sbin/logrotate –f /etc/logrotate.conf 
-/bin/rm –f /var/log/*-???????? /var/log/*.gz 
+/usr/sbin/logrotate -f /etc/logrotate.conf 
+/bin/rm -f /var/log/*-???????? /var/log/*.gz 
 /bin/rm -f /var/log/dmesg.old 
 /bin/rm -rf /var/log/anaconda
 
@@ -26,7 +26,7 @@ yum cleal all
 /bin/rm -f /etc/udev/rules.d/70*
 
 # Remove unique IDs from ethernet interface files
-/bin/sed -i ‘/^(HWADDR|UUID)=/d’ /etc/sysconfig/network-scripts/ifcfg-e*
+/bin/sed -i '/^(HWADDR|UUID)=/d' /etc/sysconfig/network-scripts/ifcfg-e*
 
 # Clean /tmp directory
 /bin/rm –rf /tmp/* 
